@@ -1,17 +1,21 @@
 import Container from "./components/Container";
 import Counter from "./components/Counter";
 import Mirror from "./components/Mirror";
+import CountProvider from "./context/CountContext";
 
 import './global.css'
 
 function App() {
+
   return (
     <Container>
-      <Counter />
+      <CountProvider>
+        <Counter />
 
-      <hr />
+        <hr />
 
-      <Mirror />
+        <Mirror />
+      </CountProvider>
     </Container>
   );
 }
