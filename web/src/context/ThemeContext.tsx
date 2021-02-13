@@ -9,7 +9,7 @@ interface Theme {
   }
 }
 
-const themes: Theme[] = [
+export const themes: Theme[] = [
   {
     name: 'dark',
     color: {
