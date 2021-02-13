@@ -1,8 +1,18 @@
+import Container from "./components/Container";
+import Counter from "./components/Counter";
+import Mirror from "./components/Mirror";
+
+import './global.css'
+
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Container>
+      <Counter />
+
+      <hr />
+
+      <Mirror />
+    </Container>
   );
 }
 
