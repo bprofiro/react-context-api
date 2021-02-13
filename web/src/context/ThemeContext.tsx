@@ -46,7 +46,7 @@ const ThemeProvider: React.FunctionComponent = ({ children }) => {
   )
 }
 
-export const useCount = (): ThemeContextData => {
+export const useTheme = (): ThemeContextData => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return { theme, setTheme }
