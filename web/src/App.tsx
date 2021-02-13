@@ -2,13 +2,15 @@ import Container from "./components/Container";
 import Counter from "./components/Counter";
 import Mirror from "./components/Mirror";
 import CountProvider from "./context/CountContext";
+import ThemeProvider from "./context/ThemeContext";
 
 import './global.css'
 
 function App() {
 
   return (
-    <Container>
+    <ThemeProvider>
+      <Container>
       <CountProvider>
         <Counter />
 
@@ -17,6 +19,7 @@ function App() {
         <Mirror />
       </CountProvider>
     </Container>
+    </ThemeProvider>
   );
 }
 
