@@ -1,21 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import Container from './src/components/Container'
+import Counter from './src/components/Counter'
+import Mirror from './src/components/Mirror'
+import { CountProvider } from './src/context/CountContext';
+import { ThemeProvider } from './src/context/ThemeContext';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider>
+      <View style={styles.container}>
+        <Container>
+          <CountProvider>
+            <Counter />
+
+            <View style={styles.lineStyles} />
+
+            <Mirror />
+          </CountProvider>
+        </Container>
+        <StatusBar style="auto" />
+      </View>
+    </ThemeProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  lineStyles: {
+    width: 289,
+    borderWidth: 0.5,
+    borderColor: '#414a5b',
+    margin: 10
   },
 });
